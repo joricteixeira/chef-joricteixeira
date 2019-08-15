@@ -16,3 +16,6 @@ powershell_script 'Configure the LCM' do
   EOH
   not_if '(Get-DscLocalConfigurationManager | select -ExpandProperty "ConfigurationMode") -eq "ApplyOnly"'
 end
+
+# IIS and it's features
+include_recipe 'joricteixeira_iis::webserveriisfeatures'
